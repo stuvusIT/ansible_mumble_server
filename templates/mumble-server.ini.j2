@@ -1,0 +1,12 @@
+{% macro print_config(config) %}
+{% for key, value in config.items() %}
+
+{{ key }}={{"true" if value is sameas true else ("false" if value is sameas false else value) }}
+{%- endfor %}
+{% endmacro -%}
+
+# {{ ansible_managed }}
+{{ print_config(mumble_server_config) }}
+
+[Ice]
+{{ print_config(mumble_server_ice_config) }}

@@ -1,0 +1,18 @@
+---
+default_mumble_server_config:
+  database: /var/lib/mumble-server/mumble-server.sqlite
+  icesecretwrite: ""
+  logfile: /var/log/mumble-server/mumble-server.log
+  pidfile: /run/mumble-server/mumble-server.pid
+  welcometext: '"<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />"'
+  port: 64738
+  serverpassword: ""
+  bandwidth: 72000
+  users: 100
+  messageburst: 5
+  messagelimit: 1
+  allowping: true
+  uname: mumble-server
+default_mumble_server_ice_config:
+  Ice.Warn.UnknownProperties: 1
+  Ice.MessageSizeMax: 65536

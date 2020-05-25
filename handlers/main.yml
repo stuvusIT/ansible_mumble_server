@@ -1,0 +1,6 @@
+---
+- name: Enable and restart mumble-server
+  service:
+    name: mumble-server
+    state: restarted
+    enabled: yes
