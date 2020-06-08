@@ -8,12 +8,11 @@ Debian.
 
 ## Role Variables
 
-
-| Name| Required/Default | Description |
-|-----|:----------------:|-------------|
-| `mumble_server.superuser_pw`  | **required** | The superuser password for the mumble server |
-| `mumble_server.config` | The same as the configuration shipped with the apt package at the time of writing this role. _see [vars](vars/main.yml) or the exact values_ | The configuration options for the mumble server. See [the wiki](https://wiki.mumble.info/wiki/Murmur.ini) for possible options. This should be a dict containing the key value pairs for the config. |
-| `mumble_server.ice_config` | The same as the configuration shipped with the apt package at the time of writing this role. _see [vars](vars/main.yml) or the exact values_ | The options for the special [`[Ice]` section](https://wiki.mumble.info/wiki/Murmur.ini#Ice_Configuration_Section) in the configuration file. This should be a dict containing the key value pairs for the config. |
+| Name                         |                                                               Required/Default                                                               | Description                                                                                                                                                                                                       |
+| ---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mumble_server.superuser_pw` |                                                                 **required**                                                                 | The superuser password for the mumble server                                                                                                                                                                      |
+| `mumble_server.config`       | The same as the configuration shipped with the apt package at the time of writing this role. _see [vars](vars main.yml) or the exact values_ | The configuration options for the mumble server. See [the wiki](https://wiki.mumble.info/wiki/Murmur.ini) for possible options. This should be a dict containing the key value pairs for the config.              |
+| `mumble_server.ice_config`   | The same as the configuration shipped with the apt package at the time of writing this role. _see [vars](vars/main.yml) or the exact values_ | The options for the special [`[Ice]` section](https://wiki.mumble.info/wiki/Murmur.ini#Ice_Configuration_Section) in the configuration file. This should be a dict containing the key value pairs for the config. |
 
 ## Example
 
