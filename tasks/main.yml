@@ -1,0 +1,30 @@
+---
+- name: Install mumble-server
+  apt:
+    name: mumble-server
+  notify:
+    - Enable and restart mumble-server
+
+- name: Instantiate mumble-server config
+  vars:
+    mumble_server_config: "{{ default_mumble_server_config | combine(mumble_server.config | default({}))}}"
+    mumble_server_ice_config: "{{ default_mumble_server_ice_config | combine(mumble_server.ice_config | default({}))}}"
+  template:
+    src: mumble-server.ini.j2
+    dest: /etc/mumble-server.ini
+  notify:
+    - Enable and restart mumble-server
+
+- name: Set superuser password
+  command:
+    argv:
+      - sudo
+      - -i
+      - murmurd
+      - -supw
+      - "{{mumble_server.superuser_pw}}"
+  register: command_result
+  #murmurd always exits with 1 ...
+  failed_when: >
+    (command_result.rc > 1) or
+    ("Superuser password set on server" not in command_result.stderr)
