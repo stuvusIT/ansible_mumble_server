@@ -17,7 +17,7 @@
 
 - name: Set superuser password
   no_log: True
-  command: "murmurd -supw {{mumble_server.superuser_pw}}"
+  command: "murmurd -supw {{ mumble_server.superuser_pw }}"
   register: command_result
   #murmurd always exits with 1 ...
   failed_when: >
