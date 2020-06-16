@@ -16,13 +16,8 @@
     - Enable and restart mumble-server
 
 - name: Set superuser password
-  command:
-    argv:
-      - sudo
-      - -i
-      - murmurd
-      - -supw
-      - "{{mumble_server.superuser_pw}}"
+  no_log: True
+  command: "murmurd -supw {{mumble_server.superuser_pw}}"
   register: command_result
   #murmurd always exits with 1 ...
   failed_when: >
